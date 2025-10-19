@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-10-19T18:29:39 EDT" name="Default suite" finished-at="2025-10-19T18:29:48 EDT" duration-ms="8991">
+    <groups>
+    </groups>
+    <test started-at="2025-10-19T18:29:39 EDT" name="Default test" finished-at="2025-10-19T18:29:48 EDT" duration-ms="8991">
+      <class name="com.bishalkarki.Test.VerifyRegisterConfirmation">
+        <test-method is-config="true" signature="openBrowser()[pri:0, instance:com.bishalkarki.Test.VerifyRegisterConfirmation@2d3379b4]" started-at="2025-10-19T18:29:39 EDT" name="openBrowser" finished-at="2025-10-19T18:29:45 EDT" duration-ms="5628" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openBrowser -->
+        <test-method signature="verifyRegistration()[pri:0, instance:com.bishalkarki.Test.VerifyRegisterConfirmation@2d3379b4]" started-at="2025-10-19T18:29:45 EDT" name="verifyRegistration" finished-at="2025-10-19T18:29:48 EDT" duration-ms="3352" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyRegistration -->
+      </class> <!-- com.bishalkarki.Test.VerifyRegisterConfirmation -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
