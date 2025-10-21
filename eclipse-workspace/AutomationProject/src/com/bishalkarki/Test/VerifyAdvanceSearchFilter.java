@@ -1,31 +1,14 @@
 package com.bishalkarki.Test;
 
-import java.time.Duration;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
 import com.bishalkarki.Page.AdvanceSerchFilter;
 import com.bishalkarki.Page.Login;
 import com.bishalkarki.Page.SignIn;
 
-public class VerifyAdvanceSearchFilter {
+public class VerifyAdvanceSearchFilter extends Base {
 	
-	WebDriver driver;
-
-	@BeforeTest
-	public void openBrowser() {
-		driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.get("https://test.bishalkarki.com/index.php");
-		driver.manage().timeouts().implicitlyWait(Duration.ofMillis(10));
-
-	}
-
+	
 	@Test
 	public void verifyAdvanceSerchFilter() {
 		try {
@@ -45,9 +28,6 @@ public class VerifyAdvanceSearchFilter {
 
 	}
 
-	@AfterTest
-	public void closeBrowser() {
-		driver.quit();
-	}
+	
 
 }

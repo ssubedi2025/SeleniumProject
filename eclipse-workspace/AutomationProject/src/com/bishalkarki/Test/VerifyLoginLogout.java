@@ -1,30 +1,14 @@
 package com.bishalkarki.Test;
 
-import java.time.Duration;
-
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
 import com.bishalkarki.Page.Login;
 import com.bishalkarki.Page.Logout;
 import com.bishalkarki.Page.SignIn;
 import com.bishalkarki.Page.VerifyLogin;
 
-public class VerifyLoginLogout {
-	WebDriver driver;
-
-	@BeforeTest
-	public void openBrowser() {
-		driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.get("https://test.bishalkarki.com/index.php");
-		driver.manage().timeouts().implicitlyWait(Duration.ofMillis(10));
-
-	}
+public class VerifyLoginLogout extends Base {
+	
 
 	@Test
 	public void verifyLoginLogout() {
@@ -49,8 +33,5 @@ public class VerifyLoginLogout {
 
 	}
 
-	@AfterTest
-	public void closeBrowser() {
-		driver.quit();
-	}
+	
 }

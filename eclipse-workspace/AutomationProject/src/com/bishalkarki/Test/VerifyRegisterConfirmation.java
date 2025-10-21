@@ -1,31 +1,14 @@
 package com.bishalkarki.Test;
 
-import java.time.Duration;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
 import com.bishalkarki.Page.CreateAccount;
 import com.bishalkarki.Page.Register;
 import com.bishalkarki.Page.RegisterConfirmationMessage;
 import com.bishalkarki.Page.SignIn;
 
-public class VerifyRegisterConfirmation {
-
-	WebDriver driver;
-
-	@BeforeTest
-	public void openBrowser() {
-		driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.get("https://test.bishalkarki.com/index.php");
-		driver.manage().timeouts().implicitlyWait(Duration.ofMillis(10));
-
-	}
+public class VerifyRegisterConfirmation extends Base {
 
 	@Test
 	public void verifyRegistration() {
@@ -54,8 +37,5 @@ public class VerifyRegisterConfirmation {
 
 	}
 
-	@AfterTest
-	public void closeBrowser() {
-		driver.quit();
-	}
+	
 }
