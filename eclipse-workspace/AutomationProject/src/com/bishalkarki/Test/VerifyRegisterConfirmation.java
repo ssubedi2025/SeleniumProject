@@ -5,6 +5,7 @@ import java.time.Duration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -39,7 +40,7 @@ public class VerifyRegisterConfirmation {
 			createAcc.createAccount();
 
 			Register rg = new Register(driver);
-			rg.doRegistration("Mike", "Wright", "rru@gmail.com", "testmike");
+			rg.doRegistration("QA", "TEST", "QAT@gmail.com", "test123");
 
 			RegisterConfirmationMessage rcm = new RegisterConfirmationMessage(driver);
 			String confirmationText = rcm.getconfText();
@@ -51,5 +52,10 @@ public class VerifyRegisterConfirmation {
 
 		}
 
+	}
+
+	@AfterTest
+	public void closeBrowser() {
+		driver.quit();
 	}
 }
