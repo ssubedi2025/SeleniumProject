@@ -36,7 +36,7 @@ public class VerifyRegisterConfirmation {
 			signin.clickSigninBtn();
 
 			CreateAccount createAcc = new CreateAccount(driver);
-			createAcc.enterEmail("rru@gmail.com");
+			createAcc.enterEmail("QAT@gmail.com");
 			createAcc.createAccount();
 
 			Register rg = new Register(driver);
