@@ -19,13 +19,7 @@ public class VerifyLogin {
 		return uname;
 		
 		
-	/*	try {
-			return userName.isDisplayed();
-	    
-		} catch (Exception e) {
-			return false;
-		}
-*/
+	
 	}
 
 }
