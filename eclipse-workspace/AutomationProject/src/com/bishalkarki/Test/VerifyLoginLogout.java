@@ -17,11 +17,11 @@ public class VerifyLoginLogout extends Base {
 			sgn.clickSigninBtn();
 
 			Login lgn = new Login(driver);
-			lgn.doLogin("xyz@gmail.com", "test123");
+			lgn.doLogin("QAT@gmail.com", "test123");
 
 			VerifyLogin vl = new VerifyLogin(driver);
 			String uname = vl.verifyUserName();
-			String expectedName = "Xyz info";
+			String expectedName = "QA TEST";
 			Assert.assertEquals(expectedName, uname);
 
 			Logout lgo = new Logout(driver);

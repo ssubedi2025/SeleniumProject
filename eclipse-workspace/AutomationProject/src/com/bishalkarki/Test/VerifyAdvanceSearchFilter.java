@@ -16,7 +16,7 @@ public class VerifyAdvanceSearchFilter extends Base {
 			sgn.clickSigninBtn();
 
 			Login lgn = new Login(driver);
-			lgn.doLogin("xyz@gmail.com", "test123");
+			lgn.doLogin("QAT@gmail.com", "test123");
 
 			AdvanceSerchFilter asf = new AdvanceSerchFilter(driver);
 			asf.searchTextField();

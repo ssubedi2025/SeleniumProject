@@ -4,13 +4,15 @@ import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 
 public class Base {
 	WebDriver driver;
 
-	@BeforeTest
+	@BeforeClass
 	public void openBrowser() {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
@@ -18,7 +20,7 @@ public class Base {
 		driver.manage().timeouts().implicitlyWait(Duration.ofMillis(10));
 
 	}
-	@AfterTest
+	@AfterClass
 	public void closeBrowser() {
 		driver.quit();
 	}
