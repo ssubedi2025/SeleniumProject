@@ -1,106 +1,88 @@
 package com.bishalkarki.Page;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AddItemInCart {
-	@FindBy(css = "#header > div.nav > div > div > nav > div.header_user_info > a")
-	private WebElement signin;
+WebDriver driver;
+WebDriverWait wait;
 	
-	@FindBy(id = "email")
-	private WebElement emailField;
-
-	@FindBy(id = "passwd")
-	private WebElement passwordField;
-
-	@FindBy(id = "SubmitLogin")
-	private WebElement submitLogin;
-
-	//click on WOMEN
-	@FindBy(xpath="//*[@id=\"block_top_menu\"]/ul/li[1]/a")
-	private WebElement clickWomanBtn;
-	//select first item in shopping cart
-	@FindBy(xpath = "//*[@id=\"product_list\"]/li[1]/div/div[1]/div/a[1]/img")
-	private WebElement selectFirstItem;
-	//Add First item in shopping cart
-	@FindBy(xpath = "//*[@id=\"add_to_cart\"]/button/span")
-	private WebElement addFirstInCart;
-	//Verify product successfully added to your shopping cart
-	@FindBy(xpath = "//*[@id=\"layer_cart\"]/div[1]/div[1]/span[2]")
-	private WebElement verifyProductAdded;
-	//Click on Continue shopping button
-	@FindBy(xpath = "//*[@id=\"layer_cart\"]/div[1]/div[2]/div[4]/span/span")
-	private WebElement clickContinueShoping;
-	//Click on DRESSES button
-	@FindBy(xpath = "//*[@id=\"block_top_menu\"]/ul/li[2]/a")
-	private WebElement clicDressesBtn;
-	//Select Third Item Printed Summer Dress in shopping cart
-	@FindBy(xpath = "//*[@id=\"product_list\"]/li[3]/div/div[1]/div/a[1]/img")
-	private WebElement selectThirdItem;
-
-	@FindBy(xpath = "//*[@id=\"add_to_cart\"]/button/span")
-	private WebElement addThirdInCart;
-	//Verify there are 2 items in your cart
-	@FindBy(xpath = "//*[@id=\"layer_cart\"]/div[1]/div[2]/span/span[1]")
-	private WebElement totalItemInCart;
-	//Proceed to checkout 
-	@FindBy(xpath = "//*[@id=\"layer_cart\"]/div[1]/div[2]/div[4]/a/span")
-	private WebElement proceedToCheckOut;
 	
-	//Verify Cart has 2 items total price
-	@FindBy(id="total_price_without_tax")
-	private WebElement totalPrice;
+	@FindBy(xpath="//div[@id='block_top_menu']/ul/li/a[@title='Dresses']")
+	private WebElement clickDresses;
+	
+	
+	@FindBy(xpath="//ul[@id='product_list']/li[1]/div/div[1]/div/a[@title='Printed Dress']")
+	private WebElement clickImageDress;
+	
+	
+	@FindBy(xpath="//*[@id=\"add_to_cart\"]/button/span")
+	private WebElement clickAddtoCart;
+	
+	
+	@FindBy(xpath="//*[@id='layer_cart']/div[1]/div/span[2]")
+	private WebElement prodctAddSucessMessage;
 
+	
+	@FindBy(xpath="//*[@id=\"layer_cart\"]/div[1]/div[2]/div[4]/span/span")
+	private WebElement clickContinueShopping;
+	
+	
+	@FindBy(xpath="//*[@id='header']/div[3]/div/div/div[3]/div/a")
+	private WebElement verifyCartProdct;
+	
 	public AddItemInCart(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void clickSigninBtn() {
-		signin.click();
+	public void dressPage() {
+		clickDresses.click();
+	
 	}
-
-	public void doLogin(String eadd, String epass) {
-
-		emailField.sendKeys(eadd);
-		passwordField.sendKeys(epass);
-		submitLogin.click();
-
+	public void imageDressPage() {
+		clickImageDress.click();
 	}
-	public void clickWoman() {
-		clickWomanBtn.click();
+	public void addToCart() {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.elementToBeClickable(clickAddtoCart));
+		clickAddtoCart.click();
 	}
-	public void selectItem() {
-		selectFirstItem.click();
-	}
-	public void addItem() {
-		addFirstInCart.click();
-	}
-	public void verifyProductAdd() {
-		String cart1 =verifyProductAdded.getText();
-		System.out.println(cart1 + "displays");
-		clickContinueShoping.click();
-	}
-	public void clickDresses() {
-		clickWomanBtn.click();
-	}
-	public void selectItem2() {
-		selectThirdItem.click();
+	public String successfulMessage() {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.elementToBeClickable(prodctAddSucessMessage));
+		return prodctAddSucessMessage.getText();
 		
 	}
-	public void addItem3() {
-		addThirdInCart.click();
+	public void clickContinuShop() {
+		
+		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		 wait.until(ExpectedConditions.visibilityOf(clickContinueShopping));
+		 clickContinueShopping.click();
 	}
-	public void totalProdctInCart() {
-		String totalprodincart =totalItemInCart.getText();
-		System.out.println(totalprodincart + "displays");
+	public void confirmProductInCart() {
+	//	verifyCartProdct.isDisplayed();
+		boolean status = false;
+		if(verifyCartProdct.isDisplayed()) {
+			status = true;
+			System.out.println("Shopping is success");
+		}
+		else {
+			if(status==false) {
+				System.out.println("Shopping is not success");
+			}
+		}
 	}
-	public void contiueCheckOut() {
-		proceedToCheckOut.click();
+	
+	
+	
 	}
-	public void verifyTotalPrice() {
-		String totalAmt = totalPrice.getText();
-		System.out.println(totalAmt + "displays");
-	}
-}
+	
+	
+	
+
