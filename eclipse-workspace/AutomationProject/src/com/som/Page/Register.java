@@ -1,4 +1,4 @@
-package com.bishalkarki.Page;
+package com.som.Page;
 
 import java.time.Duration;
 
@@ -45,12 +45,14 @@ public class Register {
 	
 	public Register(WebDriver driver) {
 		PageFactory.initElements(driver, this);
+		//selenium has inbuilt class PageFactory which has method init and initialize all the method
+		// on this particular class on the driver.
 	}
-		
+	
 	//verify radio button is checked for Male 	
 	public void doRegistration(String fname, String lname, String email, String passwd) {
 		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		title = wait.until(ExpectedConditions.elementToBeClickable(title));
+		title= wait.until(ExpectedConditions.elementToBeClickable(title));
 		title.click();
 		
 		fName.sendKeys(fname);

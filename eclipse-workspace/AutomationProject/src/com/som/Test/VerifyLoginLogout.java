@@ -1,11 +1,12 @@
-package com.bishalkarki.Test;
+package com.som.Test;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import com.bishalkarki.Page.Login;
-import com.bishalkarki.Page.Logout;
-import com.bishalkarki.Page.SignIn;
-import com.bishalkarki.Page.VerifyLogin;
+
+import com.som.Page.Login;
+import com.som.Page.Logout;
+import com.som.Page.SignIn;
+import com.som.Page.VerifyLogin;
 
 public class VerifyLoginLogout extends Base {
 	
@@ -13,18 +14,18 @@ public class VerifyLoginLogout extends Base {
 	@Test
 	public void verifyLoginLogout() {
 		try {
-			SignIn sgn = new SignIn(driver);
+			SignIn sgn = new SignIn(exceptionDriver);
 			sgn.clickSigninBtn();
 
-			Login lgn = new Login(driver);
+			Login lgn = new Login(exceptionDriver);
 			lgn.doLogin("QAT@gmail.com", "test123");
 
-			VerifyLogin vl = new VerifyLogin(driver);
+			VerifyLogin vl = new VerifyLogin(exceptionDriver);
 			String uname = vl.verifyUserName();
-			String expectedName = "QA TEST";
+			String expectedName = "QAT TEST";
 			Assert.assertEquals(expectedName, uname);
 
-			Logout lgo = new Logout(driver);
+			Logout lgo = new Logout(exceptionDriver);
 			lgo.doLogout();
 
 		} catch (Exception e) {

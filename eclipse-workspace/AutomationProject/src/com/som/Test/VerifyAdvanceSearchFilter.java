@@ -1,10 +1,11 @@
-package com.bishalkarki.Test;
+package com.som.Test;
 
 
 import org.testng.annotations.Test;
-import com.bishalkarki.Page.AdvanceSerchFilter;
-import com.bishalkarki.Page.Login;
-import com.bishalkarki.Page.SignIn;
+
+import com.som.Page.AdvanceSerchFilter;
+import com.som.Page.Login;
+import com.som.Page.SignIn;
 
 public class VerifyAdvanceSearchFilter extends Base {
 	

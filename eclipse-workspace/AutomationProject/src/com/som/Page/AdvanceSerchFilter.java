@@ -1,6 +1,5 @@
-package com.bishalkarki.Page;
+package com.som.Page;
 
-import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class AdvanceSerchFilter {
 
-	@FindBy(id = "search_query_top")
+	@FindBy(xpath = "//form[@id='searchbox']/input[4]")
 	private WebElement textField;
 
 	@FindBy(xpath = "//button[@name='submit_search']")

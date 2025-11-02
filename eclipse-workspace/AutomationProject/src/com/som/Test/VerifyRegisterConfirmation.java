@@ -1,12 +1,11 @@
-package com.bishalkarki.Test;
+package com.som.Test;
 
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import com.bishalkarki.Page.CreateAccount;
-import com.bishalkarki.Page.Register;
-import com.bishalkarki.Page.RegisterConfirmationMessage;
-import com.bishalkarki.Page.SignIn;
+
+import com.som.Page.CreateAccount;
+import com.som.Page.SignIn;
 
 public class VerifyRegisterConfirmation extends Base {
 
@@ -18,18 +17,15 @@ public class VerifyRegisterConfirmation extends Base {
 			SignIn signin = new SignIn(driver);
 			signin.clickSigninBtn();
 
-			CreateAccount createAcc = new CreateAccount(driver);
-			createAcc.enterEmail("QAT@gmail.com");
-			createAcc.createAccount();
+			CreateAccount cac = new CreateAccount(driver);
+			cac.enterEmail("cm@gmail.com");
+			cac.createAccount();
+			
+			String actualErrorMsg =cac.displayErrorMsg();
+			String expectedMsg = "An account using this email address has already been registered. Please enter a valid password or request a new one.";
+			Assert.assertEquals(actualErrorMsg, expectedMsg);
 
-			Register rg = new Register(driver);
-			rg.doRegistration("QA", "TEST", "QAT@gmail.com", "test123");
-
-			RegisterConfirmationMessage rcm = new RegisterConfirmationMessage(driver);
-			String confirmationText = rcm.getconfText();
-			String expectedMessage = "Your account has been created.";
-			Assert.assertEquals(confirmationText, expectedMessage);
-
+	
 		} catch (Exception e) {
 			System.out.println("Exception details: " + e.getMessage());
 
