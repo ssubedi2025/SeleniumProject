@@ -13,13 +13,13 @@ public class VerifyAdvanceSearchFilter extends Base {
 	@Test
 	public void verifyAdvanceSerchFilter() {
 		try {
-			SignIn sgn = new SignIn(driver);
+			SignIn sgn = new SignIn(exceptionDriver);
 			sgn.clickSigninBtn();
 
-			Login lgn = new Login(driver);
+			Login lgn = new Login(exceptionDriver);
 			lgn.doLogin("QAT@gmail.com", "test123");
 
-			AdvanceSerchFilter asf = new AdvanceSerchFilter(driver);
+			AdvanceSerchFilter asf = new AdvanceSerchFilter(exceptionDriver);
 			asf.searchTextField();
 			asf.clickSearchButton();
 			asf.verifySearchDisplay();

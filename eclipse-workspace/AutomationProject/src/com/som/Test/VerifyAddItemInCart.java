@@ -10,7 +10,7 @@ public class VerifyAddItemInCart extends Base {
 	@Test
 	public void verifyProdcutAddedInCart() {
 		try {
-			AddItemInCart aic = new AddItemInCart(driver);
+			AddItemInCart aic = new AddItemInCart(exceptionDriver);
 
 			aic.dressPage();
 			aic.imageDressPage();

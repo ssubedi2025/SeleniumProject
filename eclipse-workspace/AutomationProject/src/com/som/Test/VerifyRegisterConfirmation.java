@@ -14,10 +14,10 @@ public class VerifyRegisterConfirmation extends Base {
 
 		try {
 
-			SignIn signin = new SignIn(driver);
+			SignIn signin = new SignIn(exceptionDriver);
 			signin.clickSigninBtn();
 
-			CreateAccount cac = new CreateAccount(driver);
+			CreateAccount cac = new CreateAccount(exceptionDriver);
 			cac.enterEmail("cm@gmail.com");
 			cac.createAccount();
 			

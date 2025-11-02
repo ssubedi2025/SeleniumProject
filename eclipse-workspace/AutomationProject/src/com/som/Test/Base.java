@@ -17,16 +17,15 @@ public class Base {
 	public void openBrowser() {
 		exceptionDriver = new ChromeDriver();
 	//	capability.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
-	//	exceptionDriver = new ChromeDriver();
 		exceptionDriver.manage().window().maximize();
 	//	driver.get("http://www.automationpractice.pl/index.php");
 	
 		exceptionDriver.manage().timeouts().implicitlyWait(Duration.ofMillis(10));
-	//	exceptionDriver.get("https://test.bishalkarki.com/index.php");
-		exceptionDriver.get("http://www.automationpractice.pl/index.php");
+		exceptionDriver.get("https://test.bishalkarki.com/index.php");
+	
 
 	}
-//	@AfterMethod       
+	@AfterMethod       
 	public void closeBrowser() 
 	{
 		if (exceptionDriver != null) {

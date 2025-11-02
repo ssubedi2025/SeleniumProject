@@ -22,7 +22,7 @@ public class VerifyLoginLogout extends Base {
 
 			VerifyLogin vl = new VerifyLogin(exceptionDriver);
 			String uname = vl.verifyUserName();
-			String expectedName = "QAT TEST";
+			String expectedName = "Qa TEST";
 			Assert.assertEquals(expectedName, uname);
 
 			Logout lgo = new Logout(exceptionDriver);
