@@ -13,7 +13,7 @@ public class VerifyRegisterConfirmation extends Base {
 	public void verifyRegistration() {
 
 		try {
-
+			
 			SignIn signin = new SignIn(exceptionDriver);
 			signin.clickSigninBtn();
 

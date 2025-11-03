@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class Login {
+	WebDriver exceptionDriver;
 
 	@FindBy(id = "email")
 	private WebElement emailField;
@@ -16,8 +17,8 @@ public class Login {
 	@FindBy(id = "SubmitLogin")
 	private WebElement submitLogin;
 
-	public Login(WebDriver driver) {
-		PageFactory.initElements(driver, this);
+	public Login(WebDriver excpetionDriver) {
+		PageFactory.initElements(excpetionDriver, this);
 	}
 
 	public void doLogin(String eadd, String epass) {

@@ -10,8 +10,8 @@ public class RegisterConfirmationMessage {
 	@FindBy(css = "#center_column > p.alert.alert-success")
 	private WebElement confTextMessage;
 
-	public RegisterConfirmationMessage(WebDriver driver) {
-		PageFactory.initElements(driver, this);
+	public RegisterConfirmationMessage(WebDriver exceptonDriver) {
+		PageFactory.initElements(exceptonDriver, this);
 	}
 
 	public String getconfText() {

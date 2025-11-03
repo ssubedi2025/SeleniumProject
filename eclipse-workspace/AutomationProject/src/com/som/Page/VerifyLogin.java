@@ -10,8 +10,8 @@ public class VerifyLogin {
 	@FindBy(xpath = "//div[@class ='header_user_info']/a/span")
 	private WebElement userName;
 
-	public VerifyLogin(WebDriver driver) {
-		PageFactory.initElements(driver, this);
+	public VerifyLogin(WebDriver exceptonDriver) {
+		PageFactory.initElements(exceptonDriver, this);
 	}
 
 	public String verifyUserName() {

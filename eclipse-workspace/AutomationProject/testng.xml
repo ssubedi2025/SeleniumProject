@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="com.som.Test.VerifyLoginLogout"/>
+      <class name="com.som.Test.VerifyAdvanceSearchFilter"/>
+      <class name="com.som.Test.VerifyAddItemInCart"/>
+      <class name="com.som.Test.VerifyRegister"/>
+      <class name="com.som.Test.VerifyRegisterConfirmation"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

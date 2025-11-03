@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CreateAccount {
 	WebDriver driver;
+	WebDriver exceptionDriver;
 	
 	@FindBy(id = "email_create")
 	private WebElement emailAdd;
@@ -21,8 +22,8 @@ public class CreateAccount {
 	@FindBy(xpath="//*[@id=\"create_account_error\"]/ol/li")
 	private WebElement AlertMsg;
 	
-	public CreateAccount(WebDriver driver) {
-		PageFactory.initElements(driver, this);
+	public CreateAccount(WebDriver exceptonDriver) {
+		PageFactory.initElements(exceptonDriver, this);
 	}
 	
 	public void enterEmail(String email) {

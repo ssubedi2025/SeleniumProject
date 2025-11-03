@@ -16,8 +16,8 @@ WebDriver driver;
 	private WebElement clickSignIn;
 	
 	
-	public SignIn(WebDriver driver) {
-		PageFactory.initElements(driver, this);
+	public SignIn(WebDriver exceptonDriver) {
+		PageFactory.initElements(exceptonDriver, this);
 	}
 	public void clickSigninBtn() {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));

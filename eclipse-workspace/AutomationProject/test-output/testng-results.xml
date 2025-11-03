@@ -2,20 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-10-19T18:29:39 EDT" name="Default suite" finished-at="2025-10-19T18:29:48 EDT" duration-ms="8991">
+  <suite started-at="2025-11-03T15:24:22 EST" name="Default suite" finished-at="2025-11-03T15:24:31 EST" duration-ms="9033">
     <groups>
     </groups>
-    <test started-at="2025-10-19T18:29:39 EDT" name="Default test" finished-at="2025-10-19T18:29:48 EDT" duration-ms="8991">
-      <class name="com.bishalkarki.Test.VerifyRegisterConfirmation">
-        <test-method is-config="true" signature="openBrowser()[pri:0, instance:com.bishalkarki.Test.VerifyRegisterConfirmation@2d3379b4]" started-at="2025-10-19T18:29:39 EDT" name="openBrowser" finished-at="2025-10-19T18:29:45 EDT" duration-ms="5628" status="PASS">
+    <test started-at="2025-11-03T15:24:22 EST" name="Default test" finished-at="2025-11-03T15:24:31 EST" duration-ms="9033">
+      <class name="com.som.Test.VerifyUpdateCartTask">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.som.Test.VerifyUpdateCartTask@5e0e82ae]" started-at="2025-11-03T15:24:22 EST" name="setUp" finished-at="2025-11-03T15:24:26 EST" duration-ms="4356" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- openBrowser -->
-        <test-method signature="verifyRegistration()[pri:0, instance:com.bishalkarki.Test.VerifyRegisterConfirmation@2d3379b4]" started-at="2025-10-19T18:29:45 EDT" name="verifyRegistration" finished-at="2025-10-19T18:29:48 EDT" duration-ms="3352" status="PASS">
+        </test-method> <!-- setUp -->
+        <test-method signature="doUpdateShoppingCart()[pri:0, instance:com.som.Test.VerifyUpdateCartTask@5e0e82ae]" started-at="2025-11-03T15:24:26 EST" name="doUpdateShoppingCart" finished-at="2025-11-03T15:24:31 EST" duration-ms="4580" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyRegistration -->
-      </class> <!-- com.bishalkarki.Test.VerifyRegisterConfirmation -->
+        </test-method> <!-- doUpdateShoppingCart -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.som.Test.VerifyUpdateCartTask@5e0e82ae]" started-at="2025-11-03T15:24:31 EST" name="tearDown" finished-at="2025-11-03T15:24:31 EST" duration-ms="87" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.som.Test.VerifyUpdateCartTask -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

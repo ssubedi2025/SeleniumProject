@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class AddItemInCart {
 	WebDriver driver;
 	WebDriverWait wait;
+	WebDriver exceptionDriver;
 
 	@FindBy(xpath = "//div[@id='block_top_menu']/ul/li/a[@title='Dresses']")
 	private WebElement clickDresses;
@@ -31,8 +32,8 @@ public class AddItemInCart {
 	@FindBy(xpath = "//*[@id='header']/div[3]/div/div/div[3]/div/a")
 	private WebElement verifyCartProdct;
 
-	public AddItemInCart(WebDriver driver) {
-		PageFactory.initElements(driver, this);
+	public AddItemInCart(WebDriver exceptonDriver) {
+		PageFactory.initElements(exceptonDriver, this);
 	}
 
 	public void dressPage() {

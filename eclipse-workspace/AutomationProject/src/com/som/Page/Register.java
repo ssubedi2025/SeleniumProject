@@ -43,8 +43,8 @@ public class Register {
 	private WebElement clickRegBtn;
 	
 	
-	public Register(WebDriver driver) {
-		PageFactory.initElements(driver, this);
+	public Register(WebDriver exceptonDriver) {
+		PageFactory.initElements(exceptonDriver, this);
 		//selenium has inbuilt class PageFactory which has method init and initialize all the method
 		// on this particular class on the driver.
 	}

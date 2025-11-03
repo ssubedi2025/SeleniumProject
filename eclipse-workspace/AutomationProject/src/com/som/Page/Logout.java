@@ -10,8 +10,8 @@ public class Logout {
 	@FindBy(css = "a.logout[title='Log me out']")
 	private WebElement logoutLink;
 
-	public Logout(WebDriver driver) {
-		PageFactory.initElements(driver, this);
+	public Logout(WebDriver exceptonDriver) {
+		PageFactory.initElements(exceptonDriver, this);
 	}
 	
 	public void doLogout() {

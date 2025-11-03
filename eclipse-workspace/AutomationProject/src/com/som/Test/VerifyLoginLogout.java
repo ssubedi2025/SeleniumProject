@@ -14,6 +14,7 @@ public class VerifyLoginLogout extends Base {
 	@Test
 	public void verifyLoginLogout() {
 		try {
+			
 			SignIn sgn = new SignIn(exceptionDriver);
 			sgn.clickSigninBtn();
 

@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class AdvanceSerchFilter {
+	WebDriver exceptionDriver;
 
 	@FindBy(xpath = "//form[@id='searchbox']/input[4]")
 	private WebElement textField;
@@ -17,8 +18,8 @@ public class AdvanceSerchFilter {
 	@FindBy(xpath = "//*[@id=\"product_list\"]/li[1]/div/div[2]/h5/a")
 	private WebElement searchitemDisplay;
 
-	public AdvanceSerchFilter(WebDriver driver) {
-		PageFactory.initElements(driver, this);
+	public AdvanceSerchFilter(WebDriver exceptonDriver) {
+		PageFactory.initElements(exceptonDriver, this);
 	}
 
 	public void searchTextField() {

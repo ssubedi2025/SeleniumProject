@@ -4,34 +4,32 @@ import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 
 public class Base {
-	WebDriver exceptionDriver;
-	WebDriver driver;
-//	WebDriverWait wait;
-
-	@BeforeMethod
-	public void openBrowser() {
-		exceptionDriver = new ChromeDriver();
-	//	capability.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
-		exceptionDriver.manage().window().maximize();
-	//	driver.get("http://www.automationpractice.pl/index.php");
+	 WebDriver exceptionDriver;
 	
+
+
+
+	@BeforeTest
+	public void openBrowser() {
+		
+		exceptionDriver = new ChromeDriver();
+		exceptionDriver.manage().window().maximize();
 		exceptionDriver.manage().timeouts().implicitlyWait(Duration.ofMillis(10));
 		exceptionDriver.get("https://test.bishalkarki.com/index.php");
-	
 
 	}
-	@AfterMethod       
-	public void closeBrowser() 
-	{
-		if (exceptionDriver != null) {
-			exceptionDriver.quit();
-    }
-		
+
+//	@AfterTest
+	public void closeBrowser() {
+//		if (exceptionDriver != null) {
+//			exceptionDriver.quit();
+//		}
+		exceptionDriver.close();
+
 	}
 
 }
